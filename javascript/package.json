@@ -1,15 +1,23 @@
 {
-  "name": "javascript",
+  "name": "json-merge-patch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Implementation of RFC7396 (JSON Merge Patch)",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/y-i/json-merge-patch.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/y-i/json-merge-patch/issues"
+  },
+  "homepage": "https://github.com/y-i/json-merge-patch#readme",
   "devDependencies": {
     "jest": "^27.0.4"
   }
