@@ -3,23 +3,23 @@ const isObject = (item) => {
 }
 
 export const mergePatch = (target, patch) => {
-    if (isObject(patch)) {
-        if (!isObject(target)) {
-            target = {};
-        }
-        for (const [name, value] of Object.entries(patch)) {
-            if (value === null) {
-                if (name in target) {
-                    delete target[name];
-                }
-            } else {
-                target[name] = mergePatch(target[name], value);
-            }
-        }
-        return target;
-    } else {
+    if (!isObject(patch)) {
         return patch;
     }
+
+    if (!isObject(target)) {
+        target = {};
+    }
+    for (const [name, value] of Object.entries(patch)) {
+        if (value === null) {
+            if (name in target) {
+                delete target[name];
+            }
+        } else {
+            target[name] = mergePatch(target[name], value);
+        }
+    }
+    return target;
 };
 
 export const generatePatch = (source, target) => {
